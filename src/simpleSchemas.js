@@ -640,6 +640,44 @@ const CartItemAttribute = new SimpleSchema({
 });
 
 /**
+ * @name ImageSizes
+ * @memberof Schemas
+ * @type {SimpleSchema}
+ * @property {String} large optional
+ * @property {String} medium optional
+ * @property {String} original optional
+ * @property {String} small optional
+ * @property {String} thumbnail optional
+ */
+export const ImageSizes = new SimpleSchema({
+  large: {
+    type: String,
+    label: "Large",
+    optional: true
+  },
+  medium: {
+    type: String,
+    label: "Medium",
+    optional: true
+  },
+  original: {
+    type: String,
+    label: "Original",
+    optional: true
+  },
+  small: {
+    type: String,
+    label: "Small",
+    optional: true
+  },
+  thumbnail: {
+    type: String,
+    label: "Thumbnail",
+    optional: true
+  }
+});
+
+/**
  * @name CartItem
  * @memberof Schemas
  * @type {SimpleSchema}
@@ -677,6 +715,9 @@ export const CartItem = new SimpleSchema({
     optional: true
   },
   "createdAt": Date,
+  "imageURLs": {
+    type: ImageSizes
+  },
   "metafields": {
     type: Array,
     optional: true

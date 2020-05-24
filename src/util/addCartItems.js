@@ -113,6 +113,7 @@ export default async function addCartItems(context, currentItems, inputItems, op
       metafields,
       optionTitle: chosenVariant.optionTitle,
       parcel: chosenVariant.parcel,
+      imageURLs: catalogProduct.primaryImage.URLs,
       // This one will be kept updated by event handler watching for
       // catalog changes whereas `priceWhenAdded` will not.
       price: {
